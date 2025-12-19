@@ -32,6 +32,12 @@ function setupEventListeners() {
     // 键盘事件
     document.addEventListener('keydown', handleKeyPress);
     
+    // 方向键按钮事件
+    document.getElementById('up-button').addEventListener('click', () => move('up'));
+    document.getElementById('down-button').addEventListener('click', () => move('down'));
+    document.getElementById('left-button').addEventListener('click', () => move('left'));
+    document.getElementById('right-button').addEventListener('click', () => move('right'));
+    
     // 触摸事件（移动设备）
     let touchStartX = 0;
     let touchStartY = 0;
