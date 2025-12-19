@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'game24.html';
         } else if (selectedApp === 'detective') {
             window.location.href = 'detective.html';
+        } else if (selectedApp === 'surprise') {
+            window.location.href = 'surprise.html';
         } else {
             showMessage('请选择一个应用');
         }
