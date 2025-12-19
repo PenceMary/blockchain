@@ -441,3 +441,137 @@ label {
   font-size: 18px;
   font-weight: bold;
 }
+
+/* 24点游戏样式 */
+.game24-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 15px;
+}
+
+.card {
+  width: 80px;
+  height: 120px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+  transform: rotate(30deg);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card-low {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.card-medium {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.card-high {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.expression-container {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#expression {
+  width: 80%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+}
+
+#expression:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.history {
+  margin-top: 30px;
+  text-align: left;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.history h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #333;
+}
+
+.history-item {
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.history-cards {
+  font-weight: bold;
+  color: #333;
+}
+
+.history-expression {
+  margin: 5px 0;
+  font-family: 'Courier New', monospace;
+  color: #666;
+}
+
+.history-status {
+  font-size: 14px;
+  color: #888;
+}
+
+/* 消息类型样式 */
+.message.success {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #a5d6a7;
+}
+
+.message.error {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}

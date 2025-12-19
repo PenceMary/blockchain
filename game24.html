@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24点游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game24-container">
+        <button class="back-button" onclick="goBack()">返回主页</button>
+        <h1>24点游戏</h1>
+        <p>使用四张牌（1-10）和加减乘除运算，计算出24点！</p>
+        
+        <div class="game-controls">
+            <button id="new-game-btn" class="control-button">新游戏</button>
+            <button id="hint-btn" class="control-button">提示</button>
+            <button id="answer-btn" class="control-button">查看答案</button>
+        </div>
+        
+        <div class="cards-container" id="cards-container">
+            <!-- 卡牌将在这里动态生成 -->
+        </div>
+        
+        <div class="expression-container">
+            <label for="expression">输入你的计算式:</label>
+            <input type="text" id="expression" placeholder="例如: (8+4)*(6/2)" />
+            <button id="check-btn" class="control-button">检查答案</button>
+        </div>
+        
+        <div class="message" id="message"></div>
+        
+        <div class="timer">
+            <span>时间: </span>
+            <span id="timer">00:00</span>
+        </div>
+        
+        <div class="history">
+            <h3>游戏历史</h3>
+            <div id="history-list">
+                <!-- 游戏历史将在这里显示 -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="game24.js"></script>
+</body>
+</html>
