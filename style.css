@@ -505,7 +505,7 @@ label {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 #expression {
@@ -521,6 +521,95 @@ label {
 #expression:focus {
   border-color: #4CAF50;
   outline: none;
+}
+
+.operators-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 80%;
+  max-width: 400px;
+}
+
+.number-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.operator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.num-button, .op-button {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.num-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.num-button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.op-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.op-button:hover {
+  background-color: #0b7dda;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.clear-button, .delete-button {
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clear-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.clear-button:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button {
+  background-color: #FF9800;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #e68900;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.num-button:active, .op-button:active, .clear-button:active, .delete-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .history {
@@ -574,6 +663,80 @@ label {
   background-color: #ffebee;
   color: #c62828;
   border: 1px solid #ef9a9a;
+}
+
+/* 24点游戏响应式设计 */
+@media (max-width: 768px) {
+  .game24-container {
+    padding: 15px;
+  }
+  
+  .cards-container {
+    gap: 10px;
+  }
+  
+  .card {
+    width: 60px;
+    height: 90px;
+    font-size: 22px;
+  }
+  
+  #expression {
+    font-size: 18px;
+  }
+  
+  .operators-container {
+    width: 90%;
+  }
+  
+  .num-button, .op-button {
+    padding: 15px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game24-container {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  .cards-container {
+    gap: 8px;
+  }
+  
+  .card {
+    width: 50px;
+    height: 75px;
+    font-size: 20px;
+  }
+  
+  #expression {
+    width: 95%;
+    font-size: 16px;
+  }
+  
+  .operators-container {
+    width: 95%;
+  }
+  
+  .number-buttons {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+  }
+  
+  .operator-buttons {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+  }
+  
+  .num-button, .op-button, .clear-button, .delete-button {
+    padding: 12px;
+    font-size: 16px;
+  }
 }
 
 /* 1024游戏方向键按钮样式 */

@@ -12,7 +12,38 @@ document.addEventListener('DOMContentLoaded', () => {
             checkAnswer();
         }
     });
+    
+    // 数字按钮事件
+    document.querySelectorAll('.num-button').forEach(button => {
+        button.addEventListener('click', () => {
+            appendToExpression(button.getAttribute('data-value'));
+        });
+    });
+    
+    // 运算符按钮事件
+    document.querySelectorAll('.op-button').forEach(button => {
+        button.addEventListener('click', () => {
+            appendToExpression(button.getAttribute('data-value'));
+        });
+    });
+    
+    // 清空按钮事件
+    document.getElementById('clear-btn').addEventListener('click', () => {
+        document.getElementById('expression').value = '';
+    });
+    
+    // 退格按钮事件
+    document.getElementById('delete-btn').addEventListener('click', () => {
+        const expression = document.getElementById('expression');
+        expression.value = expression.value.slice(0, -1);
+    });
 });
+
+// 添加字符到表达式
+function appendToExpression(value) {
+    const expression = document.getElementById('expression');
+    expression.value += value;
+}
 
 // 游戏状态
 let currentCards = [];

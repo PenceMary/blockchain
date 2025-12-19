@@ -25,6 +25,33 @@
         <div class="expression-container">
             <label for="expression">输入你的计算式:</label>
             <input type="text" id="expression" placeholder="例如: (8+4)*(6/2)" />
+            
+            <div class="operators-container">
+                <div class="number-buttons">
+                    <button class="num-button" data-value="1">1</button>
+                    <button class="num-button" data-value="2">2</button>
+                    <button class="num-button" data-value="3">3</button>
+                    <button class="num-button" data-value="4">4</button>
+                    <button class="num-button" data-value="5">5</button>
+                    <button class="num-button" data-value="6">6</button>
+                    <button class="num-button" data-value="7">7</button>
+                    <button class="num-button" data-value="8">8</button>
+                    <button class="num-button" data-value="9">9</button>
+                    <button class="num-button" data-value="0">0</button>
+                </div>
+                
+                <div class="operator-buttons">
+                    <button class="op-button" data-value="+">+</button>
+                    <button class="op-button" data-value="-">-</button>
+                    <button class="op-button" data-value="*">×</button>
+                    <button class="op-button" data-value="/">÷</button>
+                    <button class="op-button" data-value="(">(</button>
+                    <button class="op-button" data-value=")">)</button>
+                    <button class="clear-button" id="clear-btn">清空</button>
+                    <button class="delete-button" id="delete-btn">退格</button>
+                </div>
+            </div>
+            
             <button id="check-btn" class="control-button">检查答案</button>
         </div>
         
