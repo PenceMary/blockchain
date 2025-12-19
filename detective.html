@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>侦探推理游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="detective-container">
+        <button id="back-button" class="back-button">返回主页</button>
+        <h1>🕵️ 侦探推理游戏</h1>
+        
+        <div class="game-description">
+            <p>阅读案情描述，分析线索，找出真凶！点击你认为的嫌疑人，系统会告诉你是否正确。</p>
+        </div>
+        
+        <div class="case-selector">
+            <label for="case-select">选择案件:</label>
+            <select id="case-select" class="case-select">
+                <option value="0">博物馆失窃案</option>
+                <option value="1">庄园密室杀人案</option>
+                <option value="2">珠宝店抢劫案</option>
+                <option value="3">神秘绑架案</option>
+            </select>
+            <button id="start-case" class="start-button">开始推理</button>
+        </div>
+        
+        <div id="case-content" class="case-content">
+            <!-- 案件内容将动态加载 -->
+        </div>
+        
+        <div id="suspects-container" class="suspects-container">
+            <!-- 嫌疑人将动态加载 -->
+        </div>
+        
+        <div id="clues-container" class="clues-container">
+            <!-- 线索将动态加载 -->
+        </div>
+        
+        <div id="result-container" class="result-container" style="display: none;">
+            <!-- 结果将显示在这里 -->
+        </div>
+        
+        <div id="hint-container" class="hint-container">
+            <button id="hint-button" class="hint-button">获取提示</button>
+            <p id="hint-text" class="hint-text" style="display: none;"></p>
+        </div>
+    </div>
+    
+    <script src="detective.js"></script>
+</body>
+</html>

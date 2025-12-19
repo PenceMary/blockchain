@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'sudoku.html';
         } else if (selectedApp === 'game24') {
             window.location.href = 'game24.html';
+        } else if (selectedApp === 'detective') {
+            window.location.href = 'detective.html';
         } else {
             showMessage('请选择一个应用');
         }
