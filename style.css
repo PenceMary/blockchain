@@ -1,12 +1,208 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+  font-family: 'Microsoft YaHei', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
 }
 
 h1 {
   color: #4CAF50;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
 }
 
-p {
-  color: #555;
+.menu-container {
+  margin-top: 30px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.app-select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.go-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.go-button:hover {
+  background-color: #45a049;
+}
+
+.message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f44336;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* 1024游戏页面样式 */
+.game-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin: 20px auto;
+  background-color: #bbada0;
+  border-radius: 6px;
+  padding: 10px;
+  position: relative;
+}
+
+.game-cell {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: rgba(238, 228, 218, 0.35);
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.back-button {
+  background-color: #8e44ad;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+.back-button:hover {
+  background-color: #7d3c98;
+}
+
+.score-container {
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* 占卜页面样式 */
+.divination-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.divine-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 30px 0;
+  transition: background-color 0.3s;
+}
+
+.divine-button:hover {
+  background-color: #c0392b;
+}
+
+.hexagram-result {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  border-left: 5px solid #e74c3c;
+  text-align: left;
+  display: none;
+}
+
+.hexagram-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #e74c3c;
+}
+
+.hexagram-symbol {
+  font-size: 3rem;
+  margin: 15px 0;
+  line-height: 1.2;
+}
+
+.hexagram-interpretation {
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+/* 1024游戏数字方块颜色 */
+.tile-2 { background-color: #eee4da; color: #776e65; }
+.tile-4 { background-color: #ede0c8; color: #776e65; }
+.tile-8 { background-color: #f2b179; color: #f9f6f2; }
+.tile-16 { background-color: #f59563; color: #f9f6f2; }
+.tile-32 { background-color: #f67c5f; color: #f9f6f2; }
+.tile-64 { background-color: #f65e3b; color: #f9f6f2; }
+.tile-128 { background-color: #edcf72; color: #f9f6f2; font-size: 30px; }
+.tile-256 { background-color: #edcc61; color: #f9f6f2; font-size: 30px; }
+.tile-512 { background-color: #edc850; color: #f9f6f2; font-size: 30px; }
+.tile-1024 { background-color: #edc53f; color: #f9f6f2; font-size: 25px; }
+.tile-2048 { background-color: #edc22e; color: #f9f6f2; font-size: 25px; }
+
+.new-game-button {
+  background-color: #8f7a66;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.new-game-button:hover {
+  background-color: #7f6a56;
 }

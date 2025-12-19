@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>易经八卦占卜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="divination-container">
+        <button class="back-button" onclick="goBack()">返回主页</button>
+        <h1>易经八卦占卜</h1>
+        <p>易经是中国古代占卜和哲学的经典，通过随机抽取六十四卦中的一卦来获取启示。</p>
+        
+        <button class="divine-button" id="divine-button">随机占一卦</button>
+        
+        <div class="hexagram-result" id="hexagram-result">
+            <div class="hexagram-name" id="hexagram-name"></div>
+            <div class="hexagram-symbol" id="hexagram-symbol"></div>
+            <div class="hexagram-interpretation" id="hexagram-interpretation"></div>
+        </div>
+    </div>
+    
+    <script src="divination.js"></script>
+</body>
+</html>
