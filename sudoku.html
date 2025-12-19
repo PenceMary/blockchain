@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数独游戏</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sudoku-container">
+        <button class="back-button" onclick="goBack()">返回主页</button>
+        <h1>数独游戏</h1>
+        <p>数独是一种逻辑性的数字填充游戏。在9×9的网格中，根据已知的数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个粗线宫内的数字均含1-9，不重复。</p>
+        
+        <div class="sudoku-controls">
+            <button id="new-game-btn" class="control-button">新游戏</button>
+            <button id="check-btn" class="control-button">检查答案</button>
+            <button id="hint-btn" class="control-button">提示</button>
+            <select id="difficulty" class="difficulty-select">
+                <option value="easy">简单</option>
+                <option value="medium">中等</option>
+                <option value="hard">困难</option>
+            </select>
+        </div>
+        
+        <div class="sudoku-board" id="sudoku-board"></div>
+        
+        <div class="message" id="message"></div>
+        
+        <div class="timer">
+            <span>时间: </span>
+            <span id="timer">00:00</span>
+        </div>
+    </div>
+    
+    <script src="sudoku.js"></script>
+</body>
+</html>

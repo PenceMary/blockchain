@@ -179,6 +179,99 @@ label {
   margin-top: 15px;
 }
 
+/* 占卜动画效果 */
+.animation-container {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  margin: 20px 0;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.animation-active {
+  display: flex;
+}
+
+.divination-animation {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.divination-circle {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #e74c3c;
+  animation: pulse 1s infinite alternate;
+}
+
+.circle-1 {
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  animation-delay: 0s;
+}
+
+.circle-2 {
+  width: 80px;
+  height: 80px;
+  top: 10px;
+  left: 10px;
+  animation-delay: 0.2s;
+}
+
+.circle-3 {
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  left: 20px;
+  animation-delay: 0.4s;
+}
+
+.hexagram-symbol-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  20% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+}
+
 /* 1024游戏数字方块颜色 */
 .tile-2 { background-color: #eee4da; color: #776e65; }
 .tile-4 { background-color: #ede0c8; color: #776e65; }
@@ -205,4 +298,146 @@ label {
 
 .new-game-button:hover {
   background-color: #7f6a56;
+}
+
+/* 数独游戏样式 */
+.sudoku-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.sudoku-controls {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.control-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.control-button:hover {
+  background-color: #45a049;
+}
+
+.difficulty-select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 0;
+  width: 100%;
+  max-width: 450px;
+  margin: 20px auto;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sudoku-cell {
+  aspect-ratio: 1;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: white;
+  position: relative;
+  outline: none;
+}
+
+.sudoku-cell:hover {
+  background-color: #f0f0f0;
+}
+
+.sudoku-cell.selected {
+  background-color: #e6f7ff;
+  box-shadow: 0 0 0 2px #1890ff inset;
+}
+
+.sudoku-cell.fixed {
+  background-color: #f5f5f5;
+  color: #333;
+  cursor: default;
+}
+
+.sudoku-cell.error {
+  background-color: #ffebee;
+  color: #f44336;
+}
+
+.sudoku-cell.hint {
+  background-color: #e8f5e9;
+  color: #4CAF50;
+}
+
+.sudoku-cell.border-top {
+  border-top: 2px solid #333;
+}
+
+.sudoku-cell.border-left {
+  border-left: 2px solid #333;
+}
+
+.number-pad {
+  grid-column: 1 / 10;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.num-btn {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.num-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.num-btn.clear {
+  background-color: #f44336;
+  color: white;
+}
+
+.num-btn.clear:hover {
+  background-color: #d32f2f;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #e3f2fd;
+  color: #0d47a1;
+  display: none;
+}
+
+.timer {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }

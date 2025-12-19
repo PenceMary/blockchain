@@ -341,21 +341,38 @@ function divineHexagram() {
     const hexagramName = document.getElementById('hexagram-name');
     const hexagramSymbol = document.getElementById('hexagram-symbol');
     const hexagramInterpretation = document.getElementById('hexagram-interpretation');
+    const animationContainer = document.getElementById('animation-container');
+    const hexagramSymbolAnimation = document.getElementById('hexagram-symbol-animation');
     
-    // 显示结果
-    hexagramName.textContent = selectedHexagram.name;
-    hexagramSymbol.textContent = selectedHexagram.symbol;
-    hexagramInterpretation.textContent = selectedHexagram.interpretation;
+    // 隐藏之前的结果
+    hexagramResult.style.display = 'none';
     
-    // 显示结果区域
-    hexagramResult.style.display = 'block';
+    // 显示动画容器
+    animationContainer.classList.add('animation-active');
     
-    // 添加动画效果
-    hexagramResult.style.opacity = '0';
+    // 设置动画中的卦象符号
+    hexagramSymbolAnimation.textContent = selectedHexagram.symbol;
+    
+    // 3秒后显示结果
     setTimeout(() => {
-        hexagramResult.style.transition = 'opacity 1s';
-        hexagramResult.style.opacity = '1';
-    }, 100);
+        // 隐藏动画
+        animationContainer.classList.remove('animation-active');
+        
+        // 显示结果
+        hexagramName.textContent = selectedHexagram.name;
+        hexagramSymbol.textContent = selectedHexagram.symbol;
+        hexagramInterpretation.textContent = selectedHexagram.interpretation;
+        
+        // 显示结果区域
+        hexagramResult.style.display = 'block';
+        
+        // 添加淡入动画效果
+        hexagramResult.style.opacity = '0';
+        setTimeout(() => {
+            hexagramResult.style.transition = 'opacity 1s';
+            hexagramResult.style.opacity = '1';
+        }, 100);
+    }, 3000);
 }
 
 // 返回主页

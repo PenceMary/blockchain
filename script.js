@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'game2048.html';
         } else if (selectedApp === 'divination') {
             window.location.href = 'divination.html';
+        } else if (selectedApp === 'sudoku') {
+            window.location.href = 'sudoku.html';
         } else {
             showMessage('请选择一个应用');
         }
